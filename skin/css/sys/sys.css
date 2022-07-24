@@ -1,0 +1,9 @@
+.layui-tab{
+    margin: 0;
+}
+.layui-form-label{
+    padding: 8px !important;
+}
+.layui-form-text{
+    width: 360px;
+}

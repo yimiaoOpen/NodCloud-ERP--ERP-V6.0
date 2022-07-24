@@ -1,0 +1,53 @@
+{extend name="main/main" /} {block name="main"}
+<link rel="stylesheet" href="/skin/css/ztree/metro.css" type="text/css" media="all" />
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs3 layui-col-xs-offset9 layui-btn-group btn_group_right">
+            {if condition="(get_root('basics_add'))"}
+                <button class="layui-btn layui-btn-primary" onclick="detail(0);">新增</button>
+            {/if}
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table class="layui-table table_center remove_margin" id="tab">
+                <thead>
+                    <tr>
+                        <th>所属分类</th>
+                        <th>分类名称</th>
+                        <th>备注信息</th>
+                        <th>相关操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="list" id="vo"}
+                        <tr id="{$vo.id}" pid="{$vo.pid}">
+                            <td>{eq name="vo.pid" value="0"}顶级分类{else/}{$vo.pidinfo.name}{/eq}</td>
+                            <td>{$vo.name}</td>
+                            <td>{$vo.data}</td>
+                            <td>
+                                <div class="layui-btn-group">
+                                    {if condition="(get_root('auxiliary_edit'))"}
+                                        <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="detail({$vo.id});">修改</button>
+                                    {/if}
+                                    {if condition="(get_root('auxiliary_del'))"}
+                                        <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="del({$vo.id});">删除</button>
+                                    {/if}
+                                </div>
+                            </td>
+                        </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    var ztree_data={php}array_unshift($list,['id'=>0,'pid'=>0,'name'=>'顶级分类','open'=>'true']);echo json_encode(array_field($list,['id','pid','name','open']));{/php};
+</script>
+<script src="/skin/js/public/treeTable.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/ztree.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/goodsclass/main.js" type="text/javascript" charset="utf-8"></script>
+{/block}

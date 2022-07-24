@@ -1,0 +1,37 @@
+{extend name="main/main" /} {block name="main"}
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs3 layui-col-xs-offset9 layui-btn-group btn_group_right">
+            {if condition="(get_root('senior_add'))"}
+                <button class="layui-btn layui-btn-primary" onclick="new_backup();">备份</button>
+            {/if}
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table id="data_table" lay-filter="table_main"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="bar_info">
+    <div class="layui-btn-group">
+        {if condition="(get_root('senior_edit'))"}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="restore">恢复</button>
+        {/if}
+        {if condition="(get_root('senior_del'))"}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="delect">删除</button>
+        {/if}
+    </div>
+</script>
+<script type="text/html" id="batch_html">
+    {if condition="(get_root('senior_del'))"}
+        <button class="layui-btn" onclick="delect('batch');" batch>删除</button>
+    {/if}
+</script>
+<script type="text/javascript" charset="utf-8">
+    var formfield={php}echo get_formfield('backup_form','layui');{/php};
+</script>
+<script src="/skin/js/backup/main.js" type="text/javascript" charset="utf-8"></script>
+{/block}

@@ -1,0 +1,100 @@
+{extend name="main/main" /} {block name="main"}
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs9" id="search_data">
+            <div class="layui-row layui-col-space3">
+                <div class="layui-col-xs3" style="display:none">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">客户标识</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|pid" value="{$Think.get.id}">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">单据类型</label>
+                        <div class="layui-input-block">
+                            <select id="s|type">
+                                <option value="0">全部类型</option>
+                                <option value="1">零售单</option>
+                                <option value="2">零售退货单</option>
+                                <option value="4">积分兑换单</option>
+                                <option value="3">手动操作</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">积分操作</label>
+                        <div class="layui-input-block">
+                            <select id="s|set">
+                                <option value="0">全部操作</option>
+                                <option value="1">积分减少</option>
+                                <option value="2">积分增加</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">制单人</label>
+                        <div class="layui-input-block">
+                            <div id="userpage" class="selectpage"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3 layui-btn-group">
+                    <button class="layui-btn layui-btn-primary" onclick="show_more_info(this);" more='0'><i class="layui-icon layui-icon-down"></i></button>
+                    <button class="layui-btn layui-btn-primary" onclick="search();"><i class="layui-icon layui-icon-search"></i></button>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space3" show>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">开始日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|start_time" placeholder="请选择开始日期">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">结束日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|end_time" placeholder="请选择结束日期">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">备注信息</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|data" placeholder="请输入备注信息">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs3 layui-btn-group btn_group_right">
+            {if condition="(get_root('basics_edit'))"}
+                <button class="layui-btn layui-btn-primary" onclick="set({$Think.get.id});">操作</button>
+            {/if}
+            <button class="layui-btn layui-btn-primary" onclick="exports();">导出</button>
+            <button class="layui-btn layui-btn-primary" onclick="replace();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table id="data_table" lay-filter="table_main"></table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    var formfield={php}echo get_formfield('integral_form','layui');{/php};
+</script>
+<script src="/skin/js/public/selectpage.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/customer/integral.js" type="text/javascript" charset="utf-8"></script>
+{/block}

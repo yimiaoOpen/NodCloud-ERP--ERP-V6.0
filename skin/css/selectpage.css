@@ -1,0 +1,103 @@
+.selectpage .layui-anim{
+    padding: 5px;
+}
+.selectpage .multi-select tip{
+    display: block;
+    line-height: 36px;
+    height: 36px;
+}
+.selectpage .search .layui-icon-search{
+    position: absolute;
+    top: 12px;
+    left: 11px;
+}
+.selectpage .search .search_condition{
+    height: 30px;
+    margin-bottom: 3px;
+    padding-left: 25px;
+    padding-right: 25px;
+    cursor: initial;
+}
+.selectpage .search .layui-icon-close{
+    position: absolute;
+    top: 12px;
+    right: 11px;
+}
+
+.selectpage .page{
+    margin-top: 5px;
+}
+.selectpage .page .layui-laypage{
+    margin: 0;
+}
+.selectpage .page .layui-laypage-prev,.selectpage .page .layui-laypage-next{
+    padding: 0 6px;
+}
+.selectpage .page .layui-laypage-skip{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.selectpage .page .layui-laypage-skip .layui-input{
+    margin: 0 3px;
+    padding: 0;
+    width: 30px;
+    border-radius: 2px;
+}
+.selectpage .page .layui-laypage-skip .layui-laypage-btn{
+    margin-left: 3px;
+    padding: 0 5px;
+}
+.selectpage .page .layui-laypage-count{
+    margin-left: 3px;
+}
+
+.selectpage .selected{
+    margin-left: 3px;
+    background-color: #F0F2F5;
+    color: #909399;
+    padding: 2px 6px;
+    border-radius: 2px;
+    display: block;
+    line-height: 22px;
+    height: 22px;
+    margin: 5px 3px 5px 0px;
+    float: left;
+}
+.selectpage .selected i{
+    font-size: 12px;
+    margin-left: 3px;
+    padding-right: 1px;
+    color: #FFF;
+    background-color: #C0C4CC;
+}
+.selectpage .empty_tip{
+    display: block;
+    text-align: center;
+    line-height: 32px;
+    background: #c3c3c3;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.selectpage .layui-laypage-count{
+    padding: 0 9px;
+    border: 1px solid #e2e2e2;
+}
+.selectpage  .multi-select{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.selectpage  .multi-select::-webkit-scrollbar {
+    width: 5px;     
+    height: 1px;
+}
+.selectpage  .multi-select::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #535353;
+}
+.selectpage  .multi-select::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background: #EDEDED;
+}

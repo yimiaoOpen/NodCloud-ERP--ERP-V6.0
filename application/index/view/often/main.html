@@ -1,0 +1,19 @@
+{extend name="main/main" /} {block name="main"}
+<link rel="stylesheet" href="/skin/css/often/often.css" type="text/css" media="all" />
+<div class="layui-form">
+    <div class="layui-row">
+        <div class="layui-col-xs9">
+            <tip>Tip:常用功能将显示在系统首页中，方便您快捷操作系统。</tip>
+        </div>
+        <div class="layui-col-xs3 layui-btn-group btn_group_right">
+            {if condition="(get_root('auxiliary_edit'))"}
+                <button class="layui-btn layui-btn-primary" onclick="save();">保存</button>
+            {/if}
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div id="often_box"></div>
+</div>
+<script src="/skin/js/often/main.js" type="text/javascript" charset="utf-8"></script>
+{/block}

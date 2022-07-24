@@ -1,0 +1,158 @@
+{extend name="main/main" /} {block name="main"}
+<link rel="stylesheet" href="/skin/css/jqui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/skin/css/jqgrid.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/skin/css/select2.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/skin/css/cashier/info.css" type="text/css" media="all" />
+<div class="layui-form layui-form-pane">
+    <div class="push_data">
+        <div class="layui-row">
+            <div class="layui-col-xs9">
+                <div class="layui-row layui-col-space3">
+                    <div class="layui-col-xs4">
+                        <div class="layui-form-item remove_margin reset_item">
+                            <label class="layui-form-label">客户</label>
+                            <div class="layui-input-block">
+                                <div id="nod_customer" class="selectpage" nod="customer" tip="请选择客户" url="/index/service/customer_list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <div class="layui-form-item remove_margin reset_item">
+                            <label class="layui-form-label">单据日期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="time" placeholder="请输入单据日期" value="{$class.time|default=date('Y-m-d',time())}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <div class="layui-form-item remove_margin reset_item">
+                            <label class="layui-form-label">单据编号</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="number" placeholder="请输入单据编号" value="{$class.number|default=get_number('XHD')}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="set_btn">
+                {empty name="class.type.nod"}
+                    {if condition="(get_root('cashier_edit'))"}
+                        <button class="layui-btn layui-btn-normal" onclick="save({$class.id});">保存单据</button>
+                    {/if}
+                    {if condition="(get_root('cashier_auditing'))"}
+                        <button class="layui-btn layui-btn-primary" onclick="auditing({$class.id},true);">审核单据</button>
+                    {/if}
+                {else/}
+                    {if condition="(get_root('cashier_auditing'))"}
+                        <button class="layui-btn layui-btn-primary" onclick="auditing({$class.id},false);">反审核单据</button>
+                    {/if}
+                {/empty}
+                <button class="layui-btn" onclick="replace();">重新载入</button>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row top_12">
+        <div class="layui-col-md12">
+            <table id="data_table"></table>
+        </div>
+    </div>
+    <div class="push_data">
+        <div class="layui-row layui-col-space12 top_12">
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin">
+                    <label class="layui-form-label">单据金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="total" placeholder="单据金额" disabled value="{$class.total}" />
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin ">
+                    <label class="layui-form-label" onclick="get_totals();">实际金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="actual" placeholder="实际金额 | 点击左侧快捷录入" value="{$class.actual}" />
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin ">
+                    <label class="layui-form-label">实收金额</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="money" placeholder="请输入实收金额" value="{$class.money}" disabled="disabled"/>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin ">
+                    <label class="layui-form-label">制单人</label>
+                    <div class="layui-input-block">
+                        <div id="nod_user" class="selectpage" nod="user" tip="请选择制单人" url="/index/service/user_list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin">
+                    <label class="layui-form-label">结算账户</label>
+                    <div class="layui-input-block">
+                        <div id="nod_account" class="selectpage" nod="account" tip="请选择结算账户" url="/index/service/account_list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin " pane>
+                    <label class="layui-form-label" onclick="show_pays();">组合支付</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" id="paymemu" lay-skin="switch" lay-text="开|关" lay-filter="paymemu">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin">
+                    <label class="layui-form-label">赠送积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="integral" placeholder="赠送积分" value="{$class.integral}" />
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin">
+                    <label class="layui-form-label" id="upload_region">单据附件</label>
+                    <div class="layui-input-block" onclick="look_file(this);">
+                        <input type="text" id="file" class="layui-input" placeholder="点击左侧区域上传" disabled nod="{$class.file|default=''}" value="{notempty name='class.file'}[ 已上传 | 点击查看 ]{/notempty}" />
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin">
+                    <label class="layui-form-label">备注信息</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="data" placeholder="请输入备注信息" value="{$class.data??''}" />
+                    </div>
+                </div>
+            </div>
+            <more></more>
+        </div>
+    </div>
+</div>
+<script src="/skin/js/public/public_table.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/html" id="more_html">{php}hook_listen('formmore');{/php}</script>
+<script type="text/javascript" charset="utf-8">
+    var price_type='retail';//初始化价格类型
+    var hide_field={hide_field:'buy,sell'};//设置隐藏的字段信息
+    var auditing_type='{$class.type.nod}';
+    var sys={php}echo json_encode(get_sys(['user_opt','enable_batch','enable_serial','integral_proportion']));{/php};
+    var formfield={php}echo get_formfield('cashier_info','jqgrid');{/php};
+    var more_val={$class.more|json_encode};
+    var plug_val={nod_user:{php}echo get_selectpage('user',$class['user']);{/php},nod_customer:{php}echo get_selectpage('customer',$class['customer']);{/php},{notempty name="class.account"}nod_account:{php}echo get_selectpage('account',$class['account']);{/php}{/notempty}};
+    var bill_info={$info|json_encode};
+    var account_arr={$account_arr|json_encode};
+    var payinfo={empty name='class.payinfo'}[]{else/}{$class.payinfo|json_encode}{/empty};
+    {notempty name='class.paytype.nod'}$('#paymemu').prop('checked',true);{/notempty}
+    sys.user_opt==0&&($('#nod_user').attr('disabled','disabled'));
+</script>
+<script src="/skin/js/public/jqgrid.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/selectpage.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/select2.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/cashier/table.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/cashier/info.js" type="text/javascript" charset="utf-8"></script>
+{/block}

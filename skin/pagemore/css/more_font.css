@@ -1,0 +1,63 @@
+@font-face {
+    font-family:nod-icon;
+    src:url(/skin/pagemore/font/iconfont.eot?v=505);
+    src:url(/skin/pagemore/font/iconfont.eot?v=505#iefix) format('embedded-opentype'), url(/skin/pagemore/font/iconfont.svg?v=505#iconfont) format('svg'), url(/skin/pagemore/font/iconfont.woff?v=505) format('woff'), url(/skin/pagemore/font/iconfont.ttf?v=505) format('truetype')
+}
+.nod-icon {
+    font-family:nod-icon!important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+.nod-icon-user:before {
+    content:"\e901"
+}
+.nod-icon-kefu:before {
+    content:"\e902"
+}
+.nod-icon-bangzhu:before {
+    content:"\e903"
+}
+.nod-icon-exit:before {
+    content:"\e904"
+}
+.nod-icon-gouhuo:before {
+    content:"\e905"
+}
+.nod-icon-xiaohuo:before {
+    content:"\e906"
+}
+.nod-icon-lingshou:before {
+    content:"\e907"
+}
+.nod-icon-cangku:before {
+    content:"\e908"
+}
+.nod-icon-zijin:before {
+    content:"\e909"
+}
+.nod-icon-jichu:before {
+    content:"\e910"
+}
+.nod-icon-print:before {
+    content:"\e911"
+}
+.nod-icon-edit:before {
+    content:"\e912"
+}
+.nod-icon-minprint:before {
+    content:"\e913"
+}
+.nod-icon-jianhao:before {
+    content:"\e914"
+}
+.nod-icon-pigform:before {
+    content:"\e915"
+}
+.nod-icon-shanghu:before {
+    content:"\e916"
+}
+.nod-icon-caigou:before {
+    content:"\e917"
+}

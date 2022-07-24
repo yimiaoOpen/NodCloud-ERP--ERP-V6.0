@@ -1,0 +1,41 @@
+{extend name="main/main" /} {block name="main"}
+<link rel="stylesheet" href="/skin/css/main/pop_goods.css" type="text/css" media="all" />
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs10" id="search_data">
+            <div class="layui-row layui-col-space3">
+                <div class="layui-col-xs4">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">服务名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|name" placeholder="请输入服务名称" value="{$Think.get.name}">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs4">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">备注信息</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|data" placeholder="请输入备注信息">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs2 btn_group_right">
+            <button class="layui-btn layui-btn-primary" onclick="search();"><i class="layui-icon layui-icon-search"></i></button>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="layui-row">
+    <div class="layui-col-md12">
+        <table id="data_table" lay-filter="table_main"></table>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    var hide_field='{$Think.get.hide_field|default=""}';
+    var formfield=hidelayuifield({php}echo get_formfield('serve','layui');{/php},hide_field);//设置隐藏字段信息
+</script>
+<script src="/skin/js/main/serve.js" type="text/javascript" charset="utf-8"></script>
+{/block}

@@ -1,0 +1,12 @@
+.form_box {
+    min-width: 100%;
+}
+#tab_main{
+    display: none;
+}
+.print_tip li {
+    line-height: 28px;
+}
+.print_tip div {
+    text-align: center;
+}

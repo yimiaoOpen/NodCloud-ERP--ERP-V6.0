@@ -1,0 +1,78 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    padding: 12px;
+    box-sizing: border-box;
+}
+.form_box{
+    min-width: 890px;
+    min-height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+.remove_margin{
+    margin: 0;
+}
+.reset_item{
+    box-sizing: border-box;
+}
+.reset_item .layui-form-label{
+    width: 80px;
+    padding: 0;
+    line-height: 38px;
+}
+.reset_item .layui-input-block{
+    margin-left: 80px;
+}
+.btn_group_right{
+    text-align: right;
+}
+.btn_group_right button{
+    padding: 0 12px;
+}
+.set_group{
+    min-width: 716px;
+}
+/*搜索条件-隐藏更多信息*/
+#search_data div[show]{
+    display: none;
+}
+.pop_box{
+    padding: 12px;
+    box-sizing: border-box;
+}
+.pop_box more{
+    display: none;
+}
+.pop_box .three_layout input{
+    width: calc(100% - 80px);
+    display: inline;
+    border-radius: 0;
+}
+.pop_box .three_layout .again{
+    float: right;
+    width: 80px;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+}
+.ztree_box{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    background: #FFF;
+}
+.layui-table-view{
+    margin-top: 0;
+}
+.layui-table-view .layui-table-cell{
+    height: 30px;
+}
+.overflow_x{
+    overflow-x: auto;
+}

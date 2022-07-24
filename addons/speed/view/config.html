@@ -1,0 +1,40 @@
+{extend name="main/main" /} {block name="main"}
+<div class="layui-form layui-form-pane" id="more_box">
+    <div class="layui-form-item">
+        <label class="layui-form-label">缓存有效期</label>
+        <div class="layui-input-inline">
+            <input type="text" id="cache_time" placeholder="请输入缓存有效期(小时)" class="layui-input" value="{$plug.config.cache_time}">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">CSS过滤路径</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请以行分割输入需要过滤CSS路径" class="layui-textarea" id="exclude_css"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">JS过滤路径</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请以行分割输入需要过滤JS路径" class="layui-textarea" id="exclude_js"></textarea>
+        </div>
+    </div>
+    <fieldset class="layui-elem-field">
+        <legend>参数说明</legend>
+        <div class="layui-field-box">
+            1.插件工作原理是将页面的CSS和JS合并成组成新文件来减少请求数。<br/>
+            2.缓存有效期以小时为单位,例如<b>0.5</b>代表半小时, <b>2</b>代表两小时。<br/>
+            3.超出有效期的文件将被重新缓存，可根据实际情况来调整。<br/>
+            4.某些JS和CSS是相对路径引用将不适用于该插件，可填写过滤参数来避免该问题。<br/>
+            5.过滤参数为文件的完整路径，例如"/skin/js/jquery.js"。<br/>
+            6.过滤参数请每行放置一条路径，否则将按照单条处理。
+        </div>
+    </fieldset>
+    <div class="set_btn">
+        <button class="layui-btn" onclick="save();">保存数据</button>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    var nod_css={php}echo json_encode($plug['config']['exclude_css']);{/php};
+    var nod_js={php}echo json_encode($plug['config']['exclude_js']);{/php};
+</script>
+<script src="/addons/speed/skin/js/config.js" type="text/javascript" charset="utf-8"></script>{/block}

@@ -1,0 +1,179 @@
+{extend name="main/main" /}
+{block name="main"}
+    <link rel="stylesheet" href="/skin/css/home.css" media="all">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md9">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">常用功能</div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-shortcut">
+                                {empty name="often"}
+                                    <p style="position: absolute;font-size: 16px;top: 36%;left: 39%;" lay-tips="您可在【常用功能】中配置该内容"><i class="layui-icon layui-icon-component" style="margin-right: 6px;"></i> 这里空空如也~</p>
+                                {else /}
+                                    <div carousel-item>
+                                        {volist name="often" id="often_vo"}
+                                            <ul class="layui-row layui-col-space10">
+                                                {volist name="often_vo" id="often_nod"}
+                                                    <li class="layui-col-xs3">
+                                                        <a lay-href="{$often_nod.set}">
+                                                            <i class="layui-icon layui-icon-star"></i>
+                                                            <cite>{$often_nod.name}</cite>
+                                                        </a>
+                                                    </li>
+                                                {/volist}
+                                            </ul>
+                                        {/volist}
+                                    </div>
+                                {/empty}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">汇总信息</div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-backlog">
+                                <div carousel-item>
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs4">
+                                            <a class="layadmin-backlog-body" lay-text="资金账户" lay-href="/index/account/main.html">
+                                                <h3>资金总数</h3>
+                                                <p><cite>{$account}</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs4">
+                                            <a class="layadmin-backlog-body" lay-text="客户管理" lay-href="/index/customer/main.html">
+                                                <h3>客户总数</h3>
+                                                <p><cite>{$customer}</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs4">
+                                            <a class="layadmin-backlog-body" lay-text="供应商管理" lay-href="/index/supplier/main.html">
+                                                <h3>供应商总数</h3>
+                                                <p><cite>{$supplier}</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs4">
+                                            <a class="layadmin-backlog-body" lay-text="库存查询" lay-href="/index/main/room.html">
+                                                <h3>库存总数</h3>
+                                                <p><cite>{$room}</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs4">
+                                            <a class="layadmin-backlog-body" lay-text="库存预警" lay-href="/index/main/room_warning.html">
+                                                <h3>库存预警</h3>
+                                                <p><cite>{$roomwarning_nums}</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs4">
+                                            <a class="layadmin-backlog-body" lay-text="职员管理" lay-href="/index/user/main.html">
+                                                <h3>职员总数</h3>
+                                                <p><cite>{$user}</cite></p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">数据概览</div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-dataview">
+                                <div carousel-item id="LAY-index-dataview">
+                                    <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">公告信息<i class="layui-icon layui-icon-tips" lay-tips="您可在【系统参数】中设置公告" lay-offset="5"></i></div>
+                <div class="layui-card-body layui-text">
+                    {empty name="sys.notice"}
+                        <p style="text-align: center;font-size: 16px;line-height: 67px;"><i class="layui-icon layui-icon-component" style="margin-right: 6px;"></i> 这里空空如也~</p>
+                    {else /}
+                        <p>{$sys.notice|nl2br}</p>
+                    {/empty}
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header">负载监测</div>
+                <div class="layui-card-body layadmin-takerates">
+                    {php}
+                        $cache_max_size=128;
+                        $cache_now_size=get_dir_size($_SERVER['DOCUMENT_ROOT'].DS.'runtime');
+                        $cache_Percentage=round($cache_now_size*100/$cache_max_size,2);
+                    {/php}
+                    <div class="layui-progress" lay-showPercent="yes">
+                        <h3 lay-tips="缓存量大于80%建议清理" lay-offset="5">系统缓存量[{$cache_now_size}M]</h3>
+                        <div class="layui-progress-bar" lay-percent="{$cache_Percentage}%"></div>
+                    </div>
+                    {php}
+                        $mysql_max_size=32;
+                        $mysql_now_size=get_mysql_size();
+                        $mysql_Percentage=round($mysql_now_size*100/$mysql_max_size,2);
+                    {/php}
+                    <div class="layui-progress" lay-showPercent="yes">
+                        <h3 lay-tips="数据量{$mysql_max_size}M下可获得优质体验" lay-offset="5">存储数据量[{$mysql_now_size}M]</h3>
+                        <div class="layui-progress-bar" lay-percent="{$mysql_Percentage}%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header">环境信息</div>
+                <div class="layui-card-body layui-text">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="120"><col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>系统类型</td>
+                                <td>{php}echo PHP_OS;{/php}</td>
+                            </tr>
+                            <tr>
+                                <td>解译引擎</td>
+                                <td>{php}echo $_SERVER['SERVER_SOFTWARE'];{/php}</td>
+                            </tr>
+                            <tr>
+                                <td>PHP版本</td>
+                                <td>{php}echo PHP_VERSION;{/php}</td>
+                            </tr>
+                            <tr>
+                                <td>MYSQL版本</td>
+                                <td>{php}echo \think\db::query("select VERSION() as ver")[0]['ver'];{/php}</td>
+                            </tr>
+                            <tr>
+                                <td>通信协议</td>
+                                <td>{php}echo $_SERVER['SERVER_PROTOCOL'];{/php}</td>
+                            </tr>
+                            <tr>
+                                <td>程序版本</td>
+                                <td>{php}echo get_ver();{/php}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        var day={php}echo json_encode($day_arr);{/php};//时间范围
+        var echarts_data={php}echo json_encode($echarts_data);{/php};//时间范围
+    </script>
+    <script src="/skin/js/main/home.js" type="text/javascript" charset="utf-8"></script>
+{/block}
