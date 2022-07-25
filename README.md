@@ -14,8 +14,9 @@ V7全新商业版演示：[https://erp.nodcloud.com/ ](https://erp.nodcloud.com/
 
 V7全新商业版（V7版是付费的 售价288起） 采用tp+vue开发，速度更流畅，功能更齐全。
 
-咨询联系：QQ：29139260 微信：diycloud
+如果需要商业版联系：QQ：29139260 微信：diycloud
 
+![点可云进销存](https://github.com/yimiaoOpen/nod/blob/main/demo/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220725151937.jpg)
 ## 介绍
  
 点可云进销存系统，基于thinkphp+layui开发。 功能包含：采购、销售、零售、多仓库管理、财务管理等功能 和超详细的报表功能（采购报表、销售报表、零售报表、仓库报表、资金报表等）
@@ -26,7 +27,6 @@ thinkphp+layui
 
 ## 功能概览
  
-![点可云进销存](https://github.com/yimiaoOpen/nod/blob/main/demo/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220725151937.jpg)
 <pre><span id="LC1" class="line">购货</span>
 <span id="LC2" class="line">-购货单</span>
 <span id="LC3" class="line">-购货退货单</span>
