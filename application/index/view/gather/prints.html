@@ -1,0 +1,34 @@
+{extend name="main/main" /}{block name="main"}
+<link rel="stylesheet" href="/skin/css/prints.css" type="text/css" media="all" />
+<div class="print_tip">
+    <ul>
+        <li>1.在线打印及设计需安装扩展程序，您可点击下方按钮，然后按照提示安装即可。</li>
+        <li>2.系统在初始化时已经带有打印样式，如不满足您的实际需求，请设计报表后保存即可。</li>
+        <li>3.默认纸张可在系统设置中选择，表格数据内容会自动分页，除表格内容外的元素均可修改。</li>
+        <li>4.如您在设计单据的过程中误操作导致表格样式错乱，您可点击下方恢复默认按钮即可恢复。</li>
+        <li>5.请使用谷歌内核浏览器或IE11以上版本，360浏览器、腾讯浏览器等请开启急速模式。</li>
+        <li>6.如您在设计报表样式中遇到问题，可到<a href="//www.nodcloud.com" target="_blank">点可云官网</a>寻求解决方案。</li>
+    </ul>
+    <hr>
+    <div>
+        <button class="layui-btn layui-btn-normal" onclick="prints()">打印报表</button>
+        <button class="layui-btn" onclick="edit()">设计报表</button>
+        <button class="layui-btn layui-btn-primary" onclick="recovery()">恢复默认</button>
+    </div>
+</div>
+<div id="tab_main">{$tab_html}<style type="text/css" media="all">table{width:100%;margin: 0 auto;font-size:12px;color:#333;border-width:1px;border-color:#666;border-collapse:collapse}table th{border-width:1px;padding:8px;border-style:solid;border-color:#666;}table td{text-align:center;border-width:1px;padding:8px;border-style:solid;border-color:#666;background-color:#fff}</style></div>
+<script type="text/javascript" charset="utf-8">
+    var customer = '{$class.customerinfo.name}'; //客户名称
+    var time ='{$class.time}'; //单据时间
+    var number ='{$class.number}';//单据编号
+    var user = '{$class.userinfo.name}';//制单人
+    var data = '{$class.data}';//备注信息
+    var html_table =$('#tab_main').html(); //表格内容
+    var print_name='{$print_name}';//纸张类型
+    var paper_type='{$paper_type}';//纸张类型
+    var print_text="{$print_text}"//模板代码
+</script>
+<script src="/skin/js/public/base64.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/LodopFuncs.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/prints.js" type="text/javascript" charset="utf-8"></script>
+{/block}

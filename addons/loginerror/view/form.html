@@ -1,0 +1,67 @@
+{extend name="main/main" /} {block name="main"}
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs9" id="search_data">
+            <div class="layui-row layui-col-space3">
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">登陆IP</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|ip" placeholder="请输入登陆IP">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">登陆账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|user" placeholder="请输入登陆账号">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">登陆密码</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|pwd" placeholder="请输入登陆密码">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <button class="layui-btn layui-btn-primary" onclick="show_more_info(this);" more="0"><i class="layui-icon layui-icon-down"></i></button>
+                    <button class="layui-btn layui-btn-primary" onclick="search();"><i class="layui-icon layui-icon-search"></i></button>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space3" show>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">开始日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|start_time" placeholder="请选择开始日期" >
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">结束日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|end_time" placeholder="请选择结束日期" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs3 layui-btn-group btn_group_right">
+            <button class="layui-btn layui-btn-primary" onclick="empty();">清空</button>
+            <button class="layui-btn layui-btn-primary" onclick="replace();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table id="data_table" lay-filter="table_main"></table>
+        </div>
+    </div>
+</div>
+<script src="/addons/loginerror/skin/js/form.js" type="text/javascript" charset="utf-8"></script>
+{/block}

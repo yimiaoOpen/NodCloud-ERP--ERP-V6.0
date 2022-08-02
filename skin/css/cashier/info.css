@@ -1,0 +1,16 @@
+#pay_tab{
+    margin:0;
+}
+#pay_tab td,#pay_tab th{
+    text-align: center;
+}
+#pay_tbody td{
+    padding: 0;
+    height: 36px;
+}
+#pay_tbody select,#pay_tbody input{
+    width: 100%;
+    height: 36px;
+    border: none;
+    text-align: center;
+}

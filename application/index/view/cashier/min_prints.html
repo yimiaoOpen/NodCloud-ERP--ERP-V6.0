@@ -1,0 +1,68 @@
+{extend name="main/main" /}{block name="main"}
+<link rel="stylesheet" href="/skin/css/prints.css" type="text/css" media="all" />
+<div class="print_tip">
+    <ul>
+        <li>1.在线打印及设计需安装扩展程序，您可点击下方按钮，然后按照提示安装即可。</li>
+        <li>2.系统在初始化时已经带有打印样式，如不满足您的实际需求，请设计报表后保存即可。</li>
+        <li>3.默认纸张可在系统设置中选择，表格数据内容会自动分页，除表格内容外的元素均可修改。</li>
+        <li>4.如您在设计单据的过程中误操作导致表格样式错乱，您可点击下方恢复默认按钮即可恢复。</li>
+        <li>5.请使用谷歌内核浏览器或IE11以上版本，360浏览器、腾讯浏览器等请开启急速模式。</li>
+        <li>6.如您在设计报表样式中遇到问题，可到<a href="//www.nodcloud.com" target="_blank">点可云官网</a>寻求解决方案。</li>
+    </ul>
+    <hr>
+    <div>
+        <button class="layui-btn layui-btn-normal" onclick="prints()">打印报表</button>
+        <button class="layui-btn" onclick="edit()">设计报表</button>
+        <button class="layui-btn layui-btn-primary" onclick="recovery()">恢复默认</button>
+    </div>
+</div>
+<div id="tab_main">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 98px;text-align:left;">商品名称</th>
+                <th style="width: 30px;">数量</th>
+                <th style="width: 30px;">金额</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="info" id="vo"}
+                <tr>
+                    <td style="text-align:left;">{$vo.goodsinfo.name}</td>
+                    <td>{$vo.nums}</td>
+                    <td>{$vo.total}</td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+    <style type="text/css" media="all">table{font-size:12px;color:#333;}table th{border-width:1px;}table td{text-align:center;border-width:1px;background-color:#fff}</style>
+<script type="text/javascript" charset="utf-8">
+    var customer = '{$class.customerinfo.name}'; //客户名称
+    var time ='{$class.time}'; //单据时间
+    var number ='{$class.number}';//单据编号
+    var total = '{$class.total}';//单据金额
+    var actual = '{$class.actual}';//实际金额
+    var money = '{$class.money}';//实收金额
+    var user = '{$class.userinfo.name}';//制单人
+    var paytype = '{$class.paytype.name}';//付款方式
+    var integral= '{$class.integral}';//赠送积分
+    var alt_integral= '{$class.customerinfo.integral}';//当前积分
+    var data = '{$class.data}';//备注信息
+    var html_table =$('#tab_main').html(); //表格内容
+    var html_height =(cal(($('#tab_main').height()-0)*1.3)-0); //表格高度
+    var print_name='{$print_name}';//纸张类型
+    var paper_type='{$paper_type}';//纸张类型
+    var print_text="{$print_text}"//模板代码
+</script>
+<script src="/skin/js/public/base64.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/LodopFuncs.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/cashier/prints.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        var auto={$Think.get.auto|default='false'};//自动打印
+        if(auto!=false){
+            setTimeout('min_prints()',513);
+        }
+    });
+</script>
+{/block}

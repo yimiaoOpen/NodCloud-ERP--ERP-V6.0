@@ -1,0 +1,29 @@
+.layui-side-menu more{
+    position: absolute;
+    top: 11px;
+    right: 20px;
+    border: 1px solid rgba(255,255,255,.7);
+    z-index: 99999;
+    cursor: pointer;
+}
+.layui-side-menu more > a{
+    line-height: 14px !important;
+    height: 14px !important;
+    padding: 2px 4px !important;
+}
+
+.layui-side-menu .layui-icon, .layui-side-menu .nod-icon{
+    font-size: 16px !important;
+}
+.user_img{
+    width: 65px;
+    height: 65px;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #FFF;
+    box-shadow: 0 0 5px #C3C3C3;
+}
+.pop_box{
+    padding: 12px;
+    box-sizing: border-box;
+}

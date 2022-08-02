@@ -1,0 +1,23 @@
+.fun_info{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+.fun_info li{
+    line-height: 32px;
+}
+.fun_info button{
+    margin-top: 12px;
+}
+.fun_box{
+    display: none;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+.layui-form-text{
+    margin-top: 1%;
+}
+.fun_box textarea{
+    height: 180px;
+}

@@ -1,0 +1,107 @@
+{extend name="main/main" /} {block name="main"}
+<link rel="stylesheet" href="/skin/css/jqui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/skin/css/jqgrid.css" type="text/css" media="all" />
+<div class="layui-form layui-form-pane">
+    <div class="push_data">
+        <div class="layui-row">
+            <div class="layui-col-xs9">
+                <div class="layui-row layui-col-space3">
+                    <div class="layui-col-xs4">
+                        <div class="layui-form-item remove_margin reset_item">
+                            <label class="layui-form-label">供应商</label>
+                            <div class="layui-input-block">
+                                <div id="nod_supplier" class="selectpage" nod="supplier" tip="请选择供应商" url="/index/service/supplier_list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <div class="layui-form-item remove_margin reset_item">
+                            <label class="layui-form-label">单据日期</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="time" placeholder="请输入单据日期" value="{$class.time|default=date('Y-m-d',time())}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <div class="layui-form-item remove_margin reset_item">
+                            <label class="layui-form-label">单据编号</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" id="number" placeholder="请输入单据编号" value="{$class.number|default=get_number('FKD')}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="set_btn">
+                {empty name="Think.get.id"}
+                    <button class="layui-btn layui-btn-normal" onclick="save('0');">新增单据</button>
+                {else/}
+                    {empty name="class.type.nod"}
+                        {if condition="(get_root('payment_edit'))"}
+                            <button class="layui-btn layui-btn-normal" onclick="save({$class.id??'0'});">保存单据</button>
+                        {/if}
+                        {if condition="(get_root('payment_auditing'))"}
+                            <button class="layui-btn layui-btn-primary" onclick="auditing({$class.id??'0'},true);">审核单据</button>
+                        {/if}
+                    {else/}
+                        {if condition="(get_root('payment_auditing'))"}
+                            <button class="layui-btn layui-btn-primary" onclick="auditing({$class.id},false);">反审核单据</button>
+                        {/if}
+                    {/empty}
+                {/empty}
+                <button class="layui-btn" onclick="replace();">重新载入</button>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row top_12">
+        <div class="layui-col-md12">
+            <table id="data_table"></table>
+        </div>
+    </div>
+    <div class="push_data">
+        <div class="layui-row layui-col-space12 top_12">
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin ">
+                    <label class="layui-form-label">制单人</label>
+                    <div class="layui-input-block">
+                        <div id="nod_user" class="selectpage" nod="user" tip="请选择制单人" url="/index/service/user_list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin ">
+                    <label class="layui-form-label" id="upload_region">单据附件</label>
+                    <div class="layui-input-block" onclick="look_file(this);">
+                        <input type="text" id="file" class="layui-input" placeholder="点击左侧区域上传" disabled nod="{$class.file|default=''}" value="{notempty name='class.file'}[ 已上传 | 点击查看 ]{/notempty}" />
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item remove_margin ">
+                    <label class="layui-form-label">备注信息</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" id="data" placeholder="请输入备注信息" value="{$class.data??''}" />
+                    </div>
+                </div>
+            </div>
+            <more></more>
+        </div>
+    </div>
+</div>
+<script src="/skin/js/public/public_table.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/html" id="more_html">{php}hook_listen('formmore');{/php}</script>
+<script type="text/javascript" charset="utf-8">
+    var auditing_type='{$class.type.nod??'0'}';
+    var user_opt={php}echo get_sys(['user_opt']);{/php};
+    var account_arr={php}echo get_account();{/php};
+    var formfield={php}echo get_formfield('payment_main','jqgrid');{/php};
+    var more_val={empty name='class'}{}{else/}{$class.more|json_encode}{/empty};
+    var plug_val={empty name='class'}{nod_user:{php}echo get_selectpage('user',Session('is_user_id'));{/php}}{else/}{nod_user:{php}echo get_selectpage('user',$class['user']);{/php},nod_supplier:{php}echo get_selectpage('supplier',$class['supplier']);{/php}}{/empty};
+    var bill_info={empty name='class'}{}{else/}{$info|json_encode}{/empty};
+    user_opt==0&&($('#nod_user').attr('disabled','disabled'));
+</script>
+<script src="/skin/js/public/jqgrid.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/selectpage.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/payment/table.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/payment/main.js" type="text/javascript" charset="utf-8"></script>
+{/block}

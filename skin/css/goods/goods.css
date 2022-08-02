@@ -1,0 +1,58 @@
+#pop_main .pop_box{
+    padding: 0 6px;
+}
+#pop_main .layui-tab{
+    margin: 0;
+}
+#pop_main .attribute .layui-table:first-child{
+    margin: 0;
+}
+#pop_main .attribute .layui-table th{
+    text-align: center;
+}
+#pop_main #attr_main td{
+    padding: 0;
+    text-align: center;
+}
+#pop_main #attr_main input{
+    border: 0;
+}
+#pop_main small{
+    float: right;
+}
+#pop_main .upload_main{
+    padding: 6px;
+}
+#pop_main #upload_box{
+    float: left;
+    width: 180px;
+    height: 96px;
+    margin: 2px;
+    box-sizing:border-box;
+    border: 1px dashed #e2e2e2;
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+}
+#pop_main #upload_box i{
+    display: block;
+    font-size: 36px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+#pop_main .upload_img{
+    float: left;
+    width: 180px;
+    height: 96px;
+    margin: 2px;
+    padding: 3px;
+    box-sizing:border-box;
+    border: 1px solid #e3e3e3;
+}
+#pop_main .upload_img img{
+    width: 100%;
+    height: 100%;
+}
+#pop_main .ke-container{
+    box-sizing: border-box;
+}

@@ -1,0 +1,20 @@
+<div class="layui-card-header">版本信息-全开源版本</div>
+<div class="layui-card-body layui-text layadmin-about">
+    <script type="text/html" template>
+        <p>当前版本：<span id="now_ver">{$now_ver}</span></p>
+    </script>
+    <div class="layui-btn-container" style="text-align: center;">
+        {if condition="($now_ver==$new_ver['ver'])"}
+            <a href="https://www.nodcloud.com" target="_blank" class="layui-btn layui-btn-danger">官网首页</a>
+        {else/}
+            {php}$number=auth_number();{/php}
+            <a lay-text="升级系统" lay-href="{$new_ver.url}?number={$number}" class="layui-btn layui-btn-danger">升级系统</a>
+        {/if}
+        <a href="https://p.qiao.baidu.com/cps/chat?siteId=13056976&userId=27301598" target="_blank" class="layui-btn">联系客服</a>
+    </div>
+</div>
+<div class="layui-card-header">关于版权</div>
+<div class="layui-card-body layui-text layadmin-about">
+    <blockquote class="layui-elem-quote" style="border: none;">点可云进销存系统受国家计算机软件著作权(2019SR0135099)保护，未经官网正规渠道授权擅自公开产品源文件、以及对产品二次出售或以任何形式二次发布的，我们将保留追究法律责任的权利。</blockquote>
+    <p>© 2019 <a href="https://www.nodcloud.com" target="_blank">NODCLOUD.COM</a> 版权所有</p>
+</div>

@@ -1,0 +1,55 @@
+{extend name="main/main" /} {block name="main"}
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs9" id="search_data">
+            <div class="layui-row layui-col-space3">
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">插件名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|name" placeholder="请输入插件名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">插件状态</label>
+                        <div class="layui-input-block">
+                            <select id="s|state">
+                                <option value="0">全部状态</option>
+                                <option value="1">禁用</option>
+                                <option value="2">启用</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <button class="layui-btn layui-btn-primary" onclick="search();"><i class="layui-icon layui-icon-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs3 btn_group_right">
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+</div>
+<hr />
+<table id="data_table" lay-filter="table_main"></table>
+<script type="text/html" id="bar_info">
+    <div class="layui-btn-group">
+        {{#  if(d.state.nod==-1){ }}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="install">安装</button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="delect">删除</button>
+        {{#  } else if(d.state.nod==0) { }}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="enable">启用</button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="uninstall">卸载</button>
+        {{#  } else if(d.state.nod==1) { }}
+            {{#  layui.each(d.set, function(index, set_vo){ }}
+                <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="view" parameter="{{set_vo.parameter}}">{{set_vo.title}}</button>
+            {{#  }); }}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="discont">停用</button>
+        {{#  } }}
+    </div>
+</script>
+<script src="/skin/js/develop/plug.js" type="text/javascript" charset="utf-8"></script>
+{/block}

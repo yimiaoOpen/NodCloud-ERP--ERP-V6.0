@@ -1,0 +1,55 @@
+{extend name="main/main" /} {block name="main"}
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs9" id="search_data">
+            <div class="layui-row layui-col-space3">
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">单位类型</label>
+                        <div class="layui-input-block">
+                            <select id="s|type">
+                                <option value="1">客户</option>
+                                <option value="2">供应商</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">单位名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|name" placeholder="请输入单位名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">单位编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|number" placeholder="请输入单位编号">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <button class="layui-btn layui-btn-primary" onclick="search();"><i class="layui-icon layui-icon-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs3 layui-btn-group btn_group_right">
+            <button class="layui-btn layui-btn-primary" onclick="exports();">导出</button>
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table id="data_table" lay-filter="table_main"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="more_html">{php}hook_listen('formmore');{/php}</script>
+<script type="text/javascript" charset="utf-8">
+    var formfield={php}echo get_formfield('arrears_form','layui');{/php};
+</script>
+<script src="/skin/js/main/arrears.js" type="text/javascript" charset="utf-8"></script>
+{/block}

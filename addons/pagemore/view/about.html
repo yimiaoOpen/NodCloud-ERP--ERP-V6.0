@@ -1,0 +1,51 @@
+{extend name="main/main" /} {block name="main"}
+    <div class="plug_about">
+        <tip>NODCLOUD</tip>
+        <img src="/skin/images/main/logo.png" />
+        <h2>公用页面元素</h2>
+        <p>公共页面加入自定义JS和CSS。</p>
+        <p>Copyright © NODCLOUD.COM</p>
+    </div>
+    <style type="text/css" media="all">
+        .form_box{
+            position: relative;
+            overflow: hidden;
+        }
+        .plug_about img{
+            display: block;
+            margin: 0 auto;
+            width: 80px;
+            margin-top: 32px;
+        }
+        .plug_about h2{
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 48px;
+            letter-spacing: 1px;
+        }
+        .plug_about p{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 14px;
+            line-height: 32px;
+        }
+        .plug_about tip{
+            color: #fff;
+            height: 36px;
+            width: 120px;
+            position: absolute;
+            top: 12px;
+            right: -30px;
+            text-align: center;
+            line-height: 36px;
+            background-color: #393c48;
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+{/block}

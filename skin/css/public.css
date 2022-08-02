@@ -1,0 +1,90 @@
+.set_btn{
+    position: fixed;
+    top: 0;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 3px 3px;
+    padding: 8px;
+    z-index: 999;
+}
+.table_center th,.table_center td{
+    text-align:center;
+}
+#tab td,#tab th{
+    padding: 9px 0;
+}
+.imports_ul{
+    
+}
+.imports_ul li{
+    line-height: 28px;
+}
+.imports_box{
+    text-align: center;
+}
+.imports_box button{
+    margin: 0 32px;
+}
+.layui-laypage-sum{
+    border: 1px solid #e2e2e2!important;
+    padding: 0 12px!important;
+    height: 24px!important;
+    line-height: 24px!important;
+}
+/*单据组*/
+.top_12{
+    margin-top: 12px;
+}
+.goods_group{
+    position: relative;
+}
+.goods_group .goods_info{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 20px;
+}
+.serial_group{
+    position: relative;
+}
+.serial_group .serial_info{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 20px;
+}
+.sm_false{
+    padding: 1px 6px;
+    margin: 0 4px;
+    color: #fff;
+    background: #159B8F;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.sm_true{
+    padding: 1px 6px;
+    margin: 0 4px;
+    color: #fff;
+    background: #2FA3FA;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.form_choice ul{
+    text-align: center;
+}
+.form_choice li{
+    width: 48%;
+    float: left;
+    padding: 12px 0;
+    border: 1px solid #ccc;
+    margin: 0 1px;
+}
+.form_choice i{
+    font-size: 36px;
+}
+.tab_center th{
+    text-align: center;
+}
+.ul_li_line li{
+    line-height: 26px;
+}

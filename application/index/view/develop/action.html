@@ -1,0 +1,52 @@
+{extend name="main/main" /} {block name="main"}
+<link rel="stylesheet" href="/skin/css/ztree/metro.css" type="text/css" media="all" />
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs3 layui-col-xs-offset9  layui-btn-group btn_group_right">
+            <button class="layui-btn layui-btn-primary" onclick="detail(0);">新增</button>
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table class="layui-table table_center remove_margin" id="tab">
+                <thead>
+                    <tr>
+                        <th>所属行为</th>
+                        <th>行为名称</th>
+                        <th>行为内容</th>
+                        <th>行为排序</th>
+                        <th>备注信息</th>
+                        <th>相关操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="list" id="vo"}
+                        <tr id="{$vo.id}" pid="{$vo.pid}">
+                            <td>{eq name="vo.pid" value="0"}顶级行为{else/}{$vo.pidinfo.name}{/eq}</td>
+                            <td>{$vo.name}</td>
+                            <td>{$vo.value}</td>
+                            <td>{$vo.sort}</td>
+                            <td>{$vo.data}</td>
+                            <td>
+                                <div class="layui-btn-group">
+                                    <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="detail({$vo.id});">修改</button>
+                                    <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="del({$vo.id});">删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    var ztree_data={php}$list=array_filter($list,function($nod){return $nod['pid']==0 && ($nod);});array_unshift($list,['id'=>0,'pid'=>0,'name'=>'顶级行为','open'=>'true']);echo json_encode(array_field($list,['id','pid','name','open']));{/php};
+</script>
+<script src="/skin/js/public/treeTable.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/public/ztree.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/develop/action.js" type="text/javascript" charset="utf-8"></script>
+{/block}

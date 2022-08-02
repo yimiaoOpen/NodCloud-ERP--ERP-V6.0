@@ -1,0 +1,9 @@
+body{
+    padding: 0;
+}
+.form_box{
+    min-width: 600px;
+}
+.layui-table-view{
+    margin:0;
+}

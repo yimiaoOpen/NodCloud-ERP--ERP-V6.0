@@ -1,0 +1,60 @@
+{extend name="main/main" /} {block name="main"}
+<link rel="stylesheet" href="/skin/css/root/root.css" type="text/css" media="all" />
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs9" id="search_data">
+            <div class="layui-row layui-col-space3">
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">职员账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|user" placeholder="请输入职员账号">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">职员名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|name" placeholder="请输入职员名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">所属商户</label>
+                        <div class="layui-input-block">
+                            <div id="merchantpage" class="selectpage"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <button class="layui-btn layui-btn-primary" onclick="search();"><i class="layui-icon layui-icon-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs3 layui-btn-group btn_group_right">
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table id="data_table" lay-filter="table_main"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="bar_info">
+    <div>
+        {if condition="(get_root('senior_edit'))"}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="root">设置</button>
+        {/if}
+    </div>
+</script>
+<script type="text/html" id="more_html">{php}hook_listen('formmore');{/php}</script>
+<script type="text/javascript" charset="utf-8">
+    var formfield={php}echo get_formfield('root_form','layui');{/php};
+</script>
+<script src="/skin/js/public/selectpage.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/root/main.js" type="text/javascript" charset="utf-8"></script>
+{/block}

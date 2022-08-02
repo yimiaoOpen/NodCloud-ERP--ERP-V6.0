@@ -1,0 +1,61 @@
+{extend name="main/main" /} {block name="main"}
+<div class="layui-form layui-form-pane">
+    <div class="layui-row">
+        <div class="layui-col-xs9" id="search_data">
+            <div class="layui-row layui-col-space3">
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">属性名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|name" placeholder="请输入属性名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="layui-form-item remove_margin reset_item">
+                        <label class="layui-form-label">备注信息</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" id="s|data" placeholder="请输入备注信息">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <button class="layui-btn layui-btn-primary" onclick="search();"><i class="layui-icon layui-icon-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs3 layui-btn-group btn_group_right">
+            {if condition="(get_root('auxiliary_add'))"}
+                <button class="layui-btn layui-btn-primary" onclick="detail(0);">新增</button>
+            {/if}
+            <button class="layui-btn layui-btn-primary" onclick="reload();"><i class="layui-icon layui-icon-refresh"></i></button>
+        </div>
+    </div>
+    <hr />
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <table id="data_table" lay-filter="table_main"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="bar_info">
+    <div class="layui-btn-group">
+        {if condition="(get_root('auxiliary_edit'))"}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="edit">修改</button>
+        {/if}
+        {if condition="(get_root('auxiliary_del'))"}
+            <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="delect">删除</button>
+        {/if}
+    </div>
+</script>
+<script type="text/html" id="batch_html">
+    {if condition="(get_root('auxiliary_del'))"}
+        <button class="layui-btn" onclick="delect('batch');" batch>删除</button>
+    {/if}
+</script>
+<script type="text/html" id="more_html">{php}hook_listen('formmore');{/php}</script>
+<script type="text/javascript" charset="utf-8">
+    var formfield={php}echo get_formfield('attribute_form','layui');{/php};
+</script>
+<script src="/skin/js/attribute/main.js" type="text/javascript" charset="utf-8"></script>
+{/block} 
