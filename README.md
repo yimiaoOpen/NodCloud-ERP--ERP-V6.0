@@ -1,29 +1,63 @@
 ![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/nod1.png)
-
-
 # 点可云ERP-开源进销存系统
- :exclamation:  :exclamation:  :exclamation: 请注意：这是商业版本更新替换下来的。  纯上一个商业版本。
+
+# 请注意：这是商业版本更新替换下来的。  纯上一个商业版本。
+切记！本源码是可以免费下载学习的，我们没有经过任何途径任何方式出售。所有收费去版权 去授权的请一律不要相信！v6压根儿就不需要授权，免费下载就可以安装搭建！如需要商用 请看下边的授权说明。
+
+#   :heart:  :heart:  :heart:  如果觉得本项目值得，请点点 Starred ，顺便关注一下，  :pray: 
 
 #### :fa-search-plus:  系统演示
 
+
+### 项目演示地址及概述：[http://2024.okmg.cn/277.html](http://2024.okmg.cn/277.html)
+
+
+#### V5开源 [V5开源](https://gitee.com/yimiaoOpen/nodcloud-v5)
+[http://v5.yimiaonet.com/](http://v5.yimiaonet.com/)   帐号：admin   密码：admin888
+
+#### V6开源 （当前项目）
 [http://v6.yimiaonet.com/](http://v6.yimiaonet.com/)   帐号：admin   密码：admin888
 
+###  :fa-check-square-o: V7珍藏款
+[https://v7.nodcloud.com/](https://v7.nodcloud.com/#/#git)   
+V7商业版（V7版是付费的 售价299起） 采用tp+vue开发，速度更流畅，功能更齐全。（暂不出售） 
 
-###  :fa-check-square-o: 另有V7全新商业版
-[https://erp.nodcloud.com/](https://erp.nodcloud.com/#/#git)   V7全新商业版（V7版是付费的 售价288起） 采用tp+vue开发，速度更流畅，功能更齐全。 
-
-#### :fa-weixin:  联系我们
-
-官网qq群：[点可云软件中心](https://jq.qq.com/?_wv=1027&k=kJlp82a5)
-
-官网客服qq：29139260   ，  客服微信：diycloud
-
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/QQ%E6%88%AA%E5%9B%BE20220726112111.png)
-
-扫码加入微信群，如二维码过期，添加客服微信 
+###  :congratulations: V8版本开放公测，更多功能等你来探索，演示请直接扫码进群 :congratulations: 
+[https://erp.nodcloud.com/](https://erp.nodcloud.com/#/#git)   
+V8全新商业版（V8版是付费的 售价399起） 采用larvae10   vue3开发，速度更流畅，功能更齐全。 
+购买v8可以联系我，限时折扣 
 
 ![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/QQ%E6%88%AA%E5%9B%BE20220726111949.png)
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202207251519370.jpg)
+[![](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E4%BC%98%E6%83%A0%E5%88%B8git.jpg)](https://item.taobao.com/item.htm?ft=t&id=774205219617)
+#### :fa-weixin:  联系我们
+
+（如有erp或其他网站，小程序，app开发需求可以联系）客服微信：diycloud
+
+![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)
+扫描上方加入微信群，如二维码过期，添加上方客服微信 
+
+####  :tw-1f18e: 安装方式一：
+1、项目上传至服务器，
+2、创建mysql数据库，
+3、访问http://域名.com/install 输入数据库信息。
+安装完成！！！
+
+####  :tw-1f18e:  安装方式二：
+1、打开宝塔面板，
+2、点击宝塔面板左侧；软件商店，点击一键部署
+3、在搜索栏搜索点可云，搜索出系统后 点击后面的一键部署输入域名即可。
+
+如出现404错误，请配置伪静态：thinkphp
+
+####  :cyclone:  :tw-2753: 视频安装教程：
+
+点可云ERP教程 - PHPstudy安装篇
+www.bilibili.com/video/BV1VT411Q7kV
+点可云ERP教程 - 宝塔安装篇
+www.bilibili.com/video/BV1As4y1Y7Ps
+点可云ERP教程—关闭数据库严格模式
+www.bilibili.com/video/BV1F54y1A7Vc
+
 
 #### :fa-thumb-tack:  介绍
 点可云进销存系统，基于thinkphp+layui开发。
@@ -86,12 +120,16 @@ thinkphp+layui
 
 ## :tw-1f50a:  开源版使用须知
 版权信息
-1. 允许用于个人学习、毕业设计、教学案例、公益事业；
+1.本项目（V6）版本可以用于商业用途，但仅限于保留版权的形式自用。
+2.如对本项目（V6）版本二次销售的（：所有以本项目（V6）进行任何盈利性行为的），请务必联系官方授权。
+3.（重要）未经授权禁止将本项目（V6）的代码和资源进行任何收费形式的传播，不得以本项目（V6）进行任何盈利性行为。否则我们将第一时间进行维权。
 
-2. 如果商用必须保留版权信息，请自觉遵守；
+点可云公司，助力开源事业，打造纯粹的开源生态。
+严厉打击破坏点可云开源生态的一切行为。
 
-3. 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负。
-
+说明：
+1.点可云v6版本不提供任何的技术支持和售后服务，如必要可联系我们付费处理，或您可以在社区内寻找解决方法。
+2.如您商业使用，建议使用V7 V8商业版，可享受技术支持，售后服务，更新服务。
 
 #### :clap:  系统截图
 
@@ -106,15 +144,16 @@ thinkphp+layui
 
 
 
-####  :+1:   如果对你有帮助，可以捐助下
-
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220722112550.jpg)
-
 
  :heart:  鸣谢：
 
 点可云公司，一秒互联公司
 
-## V7全新商业版功能介绍
+## V7商业版功能介绍
 
 ![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/V7.png)
+
+## V8全新商业版功能介绍
+
+![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/v8.jpg)
+
