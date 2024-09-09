@@ -15,16 +15,16 @@
 ## 系统演示
 
 ## - **V5开源版**
-  - 仓库地址：[https://gitee.com/yimiaoOpen/nodcloud-v5](https://gitee.com/yimiaoOpen/nodcloud-v5)
+  - 仓库地址：[访问这里获取](https://2024.okmg.cn/277.html)
   - 演示地址：访问这里获取详细演示地址以及部分截图预览：https://2024.okmg.cn/277.html
   - 登录信息：账号 - admin, 密码 - admin888
 
 ## - **V6开源版（当前主推）**
-  - 演示地址：访问这里获取详细演示地址以及部分截图预览：https://2024.okmg.cn/277.html
+  - 演示地址：[访问这里获取](https://2024.okmg.cn/277.html)
   - 登录信息：账号 - admin, 密码 - admin888
 
 ## - **V7开源版**
-  - 仓库地址：[https://gitee.com/yimiaoOpen/erp-community](https://gitee.com/yimiaoOpen/erp-community)
+  - 仓库地址：[访问这里获取](https://2024.okmg.cn/277.html)
   - 演示地址：访问这里获取详细演示地址以及部分截图预览：https://2024.okmg.cn/277.html
   - 登录信息：账号 - admin, 密码 - admin888
 
@@ -176,7 +176,7 @@
 
 **二、提交方式**
 
-1. 访问我们的GIT仓库：[https://gitee.com/yimiaoOpen/nodcloud]。
+1. 访问我们的GIT仓库。
 2. 在仓库的“Issues”页面，点击“New issue”按钮创建一个新的Issue。
 3. 选择适合的模板（如果提供），或直接填写问题描述、复现步骤、环境信息等必要内容。
 4. 提交Issue前，请确保您已经检查了现有的Issue列表，避免重复提交。
