@@ -1,4 +1,4 @@
-![输入图片说明](预览截图/2WechatIMG5936.jpg)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240823155559986.jpg)
 # 点可云ERP-开源进销存系统
 
 **点可云ERP - 开源进销存系统**
@@ -42,7 +42,7 @@
 - **演示入口**：[https://erp.nodcloud.com/](https://erp.nodcloud.com/)
 
 ## **微信群加入与联系方式**
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240902101647.jpg)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901202618698.jpg)
 
 欢迎您加入点可云进销存系统的大家庭！请扫描上方二维码快速加入我们的官方微信群，以便及时获取最新资讯、技术支持及用户交流。若二维码因故失效，请直接添加我们的客服微信（ID: diycloud），我们的客服团队将全天候为您提供帮助。
 
@@ -73,7 +73,11 @@
 - **PHPstudy安装篇**：[观看视频](http://www.bilibili.com/video/BV1VT411Q7kV)
 - **宝塔安装篇**：[观看视频](http://www.bilibili.com/video/BV1As4y1Y7Ps)
 - **关闭数据库严格模式**：[观看视频](http://www.bilibili.com/video/BV1F54y1A7Vc)
-
+  
+## **About AD**
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240820135928678.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240820140021542.png)
+淘宝店铺：[https://meim.taobao.com](https://meim.taobao.com)
 ## **系统介绍**
 
 点可云进销存系统是一款功能强大、操作简便的企业级管理软件。它基于ThinkPHP框架和LayUI前端技术构建，集成了采购、销售、零售、多仓库管理、财务管理等核心功能模块，旨在为企业提供全方位的进销存解决方案。通过详尽的报表分析和灵活的设置选项，帮助企业实现精细化管理和高效运营。
@@ -92,7 +96,7 @@
 - **系统设置**：包括基础资料、辅助资料、高级设置等选项，帮助企业轻松完成系统配置和个性化定制。
 
 
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/image.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185620350.png)
 
 
 ## **开源版使用详细须知**
@@ -123,14 +127,14 @@
 
 #### :clap:  系统截图
 
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E9%A6%96%E9%A1%B5.png)
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E9%9B%B6%E5%94%AE%E5%8D%95%E6%94%B6%E9%93%B6%E5%8F%B0.png)
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E9%9B%B6%E5%94%AE1.png)
-![输入链接说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E9%94%80%E8%B4%A7%E5%8D%95.png)
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E9%87%87%E8%B4%AD%E8%AE%A2%E5%8D%95.png)
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E9%87%87%E8%B4%AD%E5%85%A5%E5%BA%93%E5%8D%95.png)
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E8%B4%AD%E8%B4%A7%E5%8D%95.png)
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185618870.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185615479.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185617883.png)
+![输入链接说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185616863.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185614455.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185620392.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185611539.png)
+![输入图片说明](https://su.okmg.cn/wp-content/uploads/2024/04/20240901185609137.png)
 
 
 
@@ -141,11 +145,11 @@
 
 ## V7商业版功能介绍
 
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/V7.png)
+![输入图片说明](https://gitee.com/yimiaoOpen/nodcloud/raw/master/%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/V7.png)
 
 ## V8全新商业版功能介绍
 
-![输入图片说明](%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/v8.jpg)
+![输入图片说明](https://gitee.com/yimiaoOpen/nodcloud/raw/master/%E9%A2%84%E8%A7%88%E6%88%AA%E5%9B%BE/v8.jpg)
 
 ----------------------------------------------------------------------------------------
 ## 重要！BUG征集公告
