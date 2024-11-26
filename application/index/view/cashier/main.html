@@ -172,7 +172,7 @@
     {notempty name='sys.cashier_customer'}plug_val.nod_customer={php}echo get_selectpage('customer',$sys['cashier_customer']);{/php};{/notempty}
     {notempty name='sys.cashier_account'}plug_val.nod_account={php}echo get_selectpage('account',$sys['cashier_account']);{/php};{/notempty}
     {empty name='sys.enable_batch'} $('input[nod="batch"]').parent().parent().hide();{/empty}
-    {empty name='sys.enable_batch'} $('#set_serial').parent().parent().hide();{/empty}
+    {empty name='sys.enable_serial'} $('#set_serial').parent().parent().hide();{/empty}
 </script>
 <script src="/skin/js/public/selectpage.js" type="text/javascript" charset="utf-8"></script>
 <script src="/skin/js/public/select2.js" type="text/javascript" charset="utf-8"></script>
